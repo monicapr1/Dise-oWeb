@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Calculadora en JavaScript</title>
+    <script type="text/javascript">
+      function operar(operacion) {
+        var num1 = parseFloat(document.getElementById("num1").value);
+        var num2 = parseFloat(document.getElementById("num2").value);
+        var resultado;
+        switch (operacion) {
+          case "suma":
+            resultado = num1 + num2;
+            break;
+          case "resta":
+            resultado = num1 - num2;
+            break;
+          case "multiplicacion":
+            resultado = num1 * num2;
+            break;
+          case "division":
+            resultado = num1 / num2;
+            break;
+        }
+        document.getElementById("resultado").value = resultado;
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <br><br>
+    <input type="button" value="Suma" onclick="operar('suma')">
+    <input type="button" value="Resta" onclick="operar('resta')">
+    <input type="button" value="Multiplicación" onclick="operar('multiplicacion')">
+    <input type="button" value="División" onclick="operar('division')">
+    <br><br>
+    Resultado: <input type="text" id="resultado">
+  </body>
+</html>
