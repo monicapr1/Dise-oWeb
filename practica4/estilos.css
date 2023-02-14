@@ -1,0 +1,33 @@
+section{
+    background-color: gray;
+    margin: 20px;
+    padding: 20px;
+}
+.all-browsers {
+  margin: 0;
+  padding: 5px;
+  background-color: rgb(244, 237, 237);
+}
+
+.all-browsers > h1, .browser {
+  margin: 10px;
+  padding: 5px;
+}
+
+.browser {
+  background: white;
+}
+
+.browser > h2, p {
+  margin: 4px;
+  font-size: 90%;
+}
+
+aside {
+    width: 30%;
+    padding-left: 15px;
+    margin-left: 15px;
+    float: right;
+    font-style: italic;
+    background-color: lightgray;
+}
