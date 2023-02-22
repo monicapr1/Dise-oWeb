@@ -25,62 +25,105 @@
 </head>
 
 <body>
-    <di class="conteiner">
-        <div class="row p-5">
+    <div class="container">
+        <div class="row my-5">
             <div class="col-12 col-md-8">
-                <h1>App Lista de Tareas</h1>
+                <h1>APP LISTA DE TAREAS</h1>
             </div>
             <div class="col-12 col-md-4">
-
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                        class="bi bi-calendar-plus-fill" viewBox="0 0 16 16">
-                        <path
-                            d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zM8.5 8.5V10H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V11H6a.5.5 0 0 1 0-1h1.5V8.5a.5.5 0 0 1 1 0z" />
-                    </svg> Agregar una nueva tarea</button>
+                <button type="button" id="btnNuevo" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    <i class="bi bi-cloud-plus-fill"></i> Agregar nueva tarea
+                </button>
             </div>
         </div>
         <div id="listaTareas"></div>
+    </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+
+            </div>
         </div>
-        <!-- Modal -->
-        <form name="formulario" id="formulario" method="post">
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
+    </div>
+    <!-- Modal Agregar-->
+    <form name="formulario" id="formulario" method="post">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar una tarea</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
 
-                            <label for="nombre">Nombre:</label>
-                            <input required type="text" name="nombre" id="nombre" class="form-control">
+                        <label for="nombre">Nombre:</label>
+                        <input required type="text" name="nombre" id="nombre" class="form-control">
 
-                            <label for="fecha">Fecha:</label>
-                            <input required type="date" name="fecha" id="fecha" class="form-control">
+                        <label for="fecha">Fecha:</label>
+                        <input required type="date" name="fecha" id="fecha" class="form-control">
 
-                            <label for="descripcion">Descripcion:</label>
-                            <textarea required name="descripcion" id="descripcion" cols="30" rows="10"
-                                class="form-control"></textarea>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="submit" id="btnGuardar" class="btn btn-primary">Guardar Cambios</button>
-                        </div>
+                        <label for="descripcion">Descripcion:</label>
+                        <textarea required name="descripcion" id="descripcion" cols="30" rows="10"
+                            class="form-control"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" id="btnGuardar" class="btn btn-primary">Guardar Cambios</button>
                     </div>
                 </div>
             </div>
-        </form>
-        <!---Boostrap-->
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-            integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-            crossorigin="anonymous"></script>
-        <!---JS-->
-        <script src="js/index.js"></script>
+        </div>
+    </form>
+<!-- Modal Editar-->
+<form name="formularioEditar" id="formularioEditar" action="index.html" method="post">
+    <div class="modal fade" id="exampleModalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Editar tarea</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                    <div class="row my-3">
+                        <div class="col-12">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" required class="form-control" name="nombreEditar" id="nombreEditar">
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col-12">
+                            <label for="fecha">Fecha:</label>
+                            <input type="date" required class="form-control" name="fechaEditar" id="fechaEditar">
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col-12">
+                            <label for="descripcion">Descripción:</label>
+                            <textarea name="" required class="form-control" id="descripcionEditar" name="descripcionEditar" cols="30" rows="5"></textarea>
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" name="idTarea" id="idTarea">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-success" id="btnGuardarEditar">Guardar cambios</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</form>
+    <!---Boostrap-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <!---JS-->
+    <script src="js/index.js"></script>
 </body>
 
 </html>
