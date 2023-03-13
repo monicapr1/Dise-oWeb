@@ -1,0 +1,25 @@
+:root{
+    --morado: #1748c4;
+    --blanco: #ffffff;
+   }
+    
+   body {
+    background-color: var(--morado);
+   }
+    
+   h2 {
+    border-bottom: 2px solid var(--morado);
+   }
+    
+   .container {
+    color: var(--morado);;
+    background-color: var(--blanco);;
+    padding: 15px;
+   }
+    
+   button {
+    background-color: var(--blanco);
+    color: var(--azul);
+    border: 1px solid var(--morado);
+    padding: 5px;
+   }

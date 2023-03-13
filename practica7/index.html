@@ -12,69 +12,164 @@
     <p id="lista"></p>
 
     <script>
-    let lista = document.getElementById("lista");
+        let lista = document.getElementById("lista");
 
-    let texto = `Hola mi nombre es "Ibanana"`;
-    console.log(texto);
+        let texto = `Hola mi nombre es "Ibanana"`;
+        console.log(texto);
 
-    console.log(` cadena de texto en la línea 1
+        console.log(` cadena de texto en la línea 1
     
     cadena de texto en la línea 2
     `);
 
-    let a = 5;
-    let b = 10;
+        let a = 5;
+        let b = 10;
 
-    console.log(`Suma es : ${ a + b }
+        console.log(`Suma es : ${a + b}
 
         y
 
-        Multiplicacion : ${ a * b}
+        Multiplicacion : ${a * b}
     `);
 
-    let precio = 100;
-    const IVA = 0.16;
-    let total = `Total: ${( precio *  (1 + IVA)).toFixed(2)}`;
-    console.log('Precio con iva:' + total);
+        let precio = 100;
+        const IVA = 0.16;
+        let total = `Total: ${(precio * (1 + IVA)).toFixed(2)}`;
+        console.log('Precio con iva:' + total);
 
-    let persona = "Mike"
-    let edad = 28;
+        let persona = "Mike"
+        let edad = 28;
 
-    function miFuncion(cadenas, personaExp, edadExp){
-        console.log(cadenas);
-        console.log(cadenas[0]);
-        console.log(personaExp);
-        console.log(edadExp);
+        function miFuncion(cadenas, personaExp, edadExp) {
+            console.log(cadenas);
+            console.log(cadenas[0]);
+            console.log(personaExp);
+            console.log(edadExp);
 
-/*        
-        if(edadExp>18)
-             return "Mayor de edad";}
-        else
-             return "Menor de edad";
+            /*        
+                    if(edadExp>18)
+                         return "Mayor de edad";}
+                    else
+                         return "Menor de edad";
+            
+            */
 
-*/
+            return edadExp > 18 ? "Mayor de edad" : "Menor de edad";
+        }
 
-        return edadExp>18 ? "Mayor de edad" : "Menor de edad";
-    }
-    
-    const resultado = miFuncion(`El señor ${persona} tiene 
+        const resultado = miFuncion(`El señor ${persona} tiene 
     una edad de ${edad}`);
-    console.log(resultado); 
+        console.log(resultado);
 
-    let titulo = "Mejores cantantes mujeres";
-    let cantantes = ["Rihanna", "Bellacath", "Shakira"];
-    let html = `<h2> ${ titulo } </h2>`;
-
-
-    html += "<ul>";
-    for(let cantante of cantantes){
-        html += `<li>${ cantante}</li>`;
-    }
-
-    html += "<ul>";
+        let titulo = "Mejores cantantes mujeres";
+        let cantantes = ["Rihanna", "Bellacath", "Shakira"];
+        let html = `<h2> ${titulo} </h2>`;
 
 
-            lista.innerHTML = html ;
+        html += "<ul>";
+        for (let cantante of cantantes) {
+            html += `<li>${cantante}</li>`;
+        }
+
+        html += "<ul>";
+
+
+        lista.innerHTML = html;
+        //Arreglos
+
+        let array = [1, 2, 3];
+        array[6] = 9;
+        console.log(array[5]);
+
+        //Ordena alfabeticamente
+
+        const frutas = ["Banana", "Orange", "Apple", "Mango"];
+        frutas.sort();
+        console.log(frutas);
+
+        const numbers = [33, 2, 8];
+        numbers.sort();
+        console.log(numbers[1]);
+        console.log(numbers);
+
+        //Repaso variables
+
+        var apellido = "Pérez"; // var ambito global
+        let muestraApellido = () => {
+            let apellido = "González"; //let ambito en el bloque o scope
+            let rfc = "hrt218399";
+            console.log("Dentro: " + apellido);
+        }
+        muestraApellido();
+        console.log("Fuera: " + apellido);
+        //console.log("Fuera: " + rfc);
+
+        const PI = 3.1416;
+        //PI = 2.2;
+
+        let pais = "MX";
+        // Función anónima
+        (() => {
+            console.log(pais);
+        })();
+
+
+        let superHeroe = "SpiderMan";
+        let heroeEdad = 25;
+        let heroePeso = 65.3;
+        let universoMarvel = true;
+        let esVillano = Boolean(0);
+        let poderes = ["Sentido", "Telaraña"];
+
+        //JSON , objetos literales
+        let datosFamiliar =
+        {
+            nombre: "May",
+            apellido: "Parker",
+            edad: 70,
+            nombreCompleto: function () {
+                return this.nombre + " " + this.apellido;
+            }
+        };
+
+        console.log(
+            typeof superHeroe,
+            typeof heroeEdad,
+            typeof heroePeso,
+            typeof universoMarvel,
+            typeof esVillano,
+            typeof poderes,
+            typeof familiares);
+
+        console.log(datosFamiliar.nombreCompleto());
+
+
+        delete datosFamiliar.edad;
+        console.log(datosFamiliar);
+
+        console.log("nombre" in datosFamiliar);
+        console.log("edad" in datosFamiliar);
+
+        for (let propiedad in datosFamiliar) {
+            console.log(propiedad);
+        }
+
+
+        //opcionales
+
+        const propietarios = {
+            name: 'Alicia',
+            gato: {
+                name: 'Capuchino'
+            }
+        };
+
+        const nombrePerro = propietarios.perro?.nombre;
+        console.log(nombrePerro);
+        // Expected output: undefined
+
+        console.log(propietarios.metodoInexistente?.());
+        // Expected output: undefined
 
     </script>
 </body>
