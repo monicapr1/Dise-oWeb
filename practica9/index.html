@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practica 7</title>
 </head>
+
 <body>
 
     <p id="lista"></p>
@@ -23,14 +25,14 @@
 
         let a = 5;
         let b = 10;
-        console.log(`Suma es: ${ a + b }
+        console.log(`Suma es: ${a + b}
             y 
-            Multiplicación : ${ a * b } 
+            Multiplicación : ${a * b} 
         `);
 
         let precio = 120;
         const IVA = 0.16;
-        let total = ` Total: ${ (precio * (1 + IVA)).toFixed(2)} `;
+        let total = ` Total: ${(precio * (1 + IVA)).toFixed(2)} `;
         console.log('Precio con iva: ' + total);
 
         let persona = "Mike";
@@ -41,13 +43,13 @@
             console.log(cadenas[0]);
             console.log(personaX);
             console.log(edadExp);
-/*
-            if(edadExp>18)
-                return "Mayor de edad";
-            else 
-                return "Menor de edad";
-*/
-            return edadExp>18 ? "Mayor de edad" : "Menor de edad";
+            /*
+                        if(edadExp>18)
+                            return "Mayor de edad";
+                        else 
+                            return "Menor de edad";
+            */
+            return edadExp > 18 ? "Mayor de edad" : "Menor de edad";
         }
         const resultado = miFuncion`El señor
          ${persona} tiene 
@@ -55,20 +57,50 @@
         console.log(resultado);
 
         let titulo = "Mejores cantantes mujeres";
-        let cantantes = ["Rihanna","Bellacath","Shakira"];
-        let html = `<h2> ${ titulo } </h2>`;
+        let cantantes = ["Rihanna", "Bellacath", "Shakira"];
+        let html = `<h2> ${titulo} </h2>`;
 
         html += "<ul>";
-        for(let cantante of cantantes){
-            html += `<li>${ cantante }</li>`;
+        for (let cantante of cantantes) {
+            html += `<li>${cantante}</li>`;
         }
         html += "</ul>";
 
-        lista.innerHTML = html ; 
+        lista.innerHTML = html;
+
+        let arreglo = [1, 2, 3];
+        arreglo[6] = 9;
+        console.log(arello[4]);
+
+        const frutas = ["Banana", "Apple", "Mango", "Orange"];
+        frutas.sort();
+        console.log(frutas);
+
+        const numeros = [33, 2, 8];
+        numeros.sort();
+        console.log(numeros);
 
 
+        var apellido = "Pérez"; // var ambito global
+        let muestraApellido = () => {
+            let apellido = "González"; //let ambito en el bloque o scope
+            let rfc = "hrt218399";
+            console.log("Dentro: " + apellido);
+        }
+        console.log("Fuera: " + apellido);
+        muestraApellido();
+
+        const PI = 3.1416;
+        //PI = 2.2;
+
+        let pais = "MX";
+        // Función anónima
+        (() => {
+            console.log(pais);
+        })();
 
     </script>
-    
+
 </body>
+
 </html>
