@@ -1,8 +1,97 @@
-#resultados{
-		width: 50%;
-		height: 50%;
-		border-radius: 10px;
-	}
-#etiquet{
-    color: aqua;
-}
+/* Estilos generales */
+body {
+	font-family: Arial, sans-serif;
+	background-color: #111;
+	color: #fff;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+  }
+  
+  .container {
+	max-width: 960px;
+	margin: 0 auto;
+  }
+  
+  .my-5 {
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+  }
+  
+  /* Estilos para el formulario */
+  form {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+  }
+  
+  label {
+	flex-basis: 100%;
+	margin-bottom: 1rem;
+  }
+  
+  input[type="text"] {
+	flex-basis: 100%;
+	padding: 0.5rem;
+	font-size: 1.2rem;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	margin-bottom: 1rem;
+  }
+  
+  .btn-buscar {
+	background-color: #1db954;
+	color: #fff;
+	padding: 0.5rem 1rem;
+	font-size: 1.2rem;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+  }
+  
+  .btn-buscar:hover {
+	background-color: #0d8043;
+  }
+  
+  /* Estilos para la sección de información del artista */
+  #fotoAlbum {
+	max-width: 100%;
+	border-radius: 50%;
+  }
+  
+  #nombreArtista {
+	font-size: 2rem;
+  }
+  
+  #nombreAlbum {
+	font-size: 1.5rem;
+  }
+  
+  /* Estilos para la lista de canciones */
+  #listaCanciones {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+  }
+  
+  .cancion {
+	flex-basis: calc(33.33% - 1rem);
+	margin-bottom: 1rem;
+	padding: 1rem;
+	background-color: #333;
+	border-radius: 5px;
+  }
+  
+  .cancion h3 {
+	font-size: 1.2rem;
+	margin-bottom: 0.5rem;
+  }
+  
+  .cancion p {
+	margin: 0;
+	font-size: 1rem;
+	color: #ccc;
+  }
+  

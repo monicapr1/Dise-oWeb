@@ -1,7 +1,28 @@
-var token =
-  "BQA5bFLTsg2X9Tx-FJpHXrWgfle272mCqWyG1Oj448_-WafG7HhD6sRT2aBrCWU-rG4NgbDyUpHAt8ow1ZrL2KylyaoqJEB-NWHFUU16tG7FbiCATCjv7y1GY6QygYwyCPEutCR13_aXevwYKmC_JXxq-uv0xcxON0R29NKy9Z99pPTXkQToGce-zHrRnhGWbh4KueRTefQPSiINoQn4xJCUSCNvGNkWIbhCBy3Dp02ig8C0h3Q7feXLkJt1g7rLnoRS-vZSZdTeh3PP0RJavhaKozJ7cLfXR9N5wU5ApG8mNsJHetUEhrmiriPkwFJ_yU4_qa3CWiz1ovMi2AqAgVkBwGQ6EeqLm1MRWIVQWTRFfpk";
-function buscar() {
-    var artista = document.getElementById("artista").value;
+// var token =
+//   "BQA5bFLTsg2X9Tx-FJpHXrWgfle272mCqWyG1Oj448_-WafG7HhD6sRT2aBrCWU-rG4NgbDyUpHAt8ow1ZrL2KylyaoqJEB-NWHFUU16tG7FbiCATCjv7y1GY6QygYwyCPEutCR13_aXevwYKmC_JXxq-uv0xcxON0R29NKy9Z99pPTXkQToGce-zHrRnhGWbh4KueRTefQPSiINoQn4xJCUSCNvGNkWIbhCBy3Dp02ig8C0h3Q7feXLkJt1g7rLnoRS-vZSZdTeh3PP0RJavhaKozJ7cLfXR9N5wU5ApG8mNsJHetUEhrmiriPkwFJ_yU4_qa3CWiz1ovMi2AqAgVkBwGQ6EeqLm1MRWIVQWTRFfpk";
+function getAccessToken() {
+  const clientId = "f7941367faa44f8cb4b4ed2f403f1bcc";
+  const clientSecret = "7ea1d45692914c70b0d1ea7d814bcc6a";
+  const url = "https://accounts.spotify.com/api/token";
+  const encodedData = btoa(`${clientId}:${clientSecret}`);
+
+  return fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "Authorization": `Basic ${encodedData}`,
+    },
+    body: "grant_type=client_credentials",
+  })
+  .then(response => response.json())
+  .then(data => data.access_token)
+  .catch(error => {
+    console.error("Error obtaining access token:", error);
+  });
+}
+ async function buscar() {
+
+  var artista = document.getElementById("artista").value;
     var url = "https://api.spotify.com/v1/search?q=" + artista + "&type=artist";
   
     fetch(url, {
@@ -87,4 +108,3 @@ function mostrarCanciones(id_album) {
       alert("Ha ocurrido un error al obtener las canciones del álbum.");
     });
   }
-  
