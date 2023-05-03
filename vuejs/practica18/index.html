@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 18</title>
+    <style>
+        table {
+            width: 100%;
+        }
+
+        td {
+            border: 1px solid #efefef;  
+        }
+    </style>
+</head>
+<body>
+    <div id="miApp"> 
+        <p>{{ frases[0].texto }}</p>
+        <!-- <p>{{ frases[4].texto }}</p> -->
+        <!-- <ul v-for="frase of frases" :key="frase.id"></ul> -->
+        <ul v-for="frase in frases" :key="frase.id">
+            <li>{{frase.id}} {{frase.texto}}</li>
+        </ul>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+</body>

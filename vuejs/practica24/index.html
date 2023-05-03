@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="number-24.png" type="image/x-icon">
+    <title>VueJS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container my-5" id="miApp">
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>Código</td>
+                        <td>Descripción</td>
+                        <td>Precio</td>
+                    </tr>
+                    <template v-for="articulo in articulos" :key="articulo.codigo">
+                      <tr>
+                        <td>{{articulo.codigo}}</td>
+                        <td>{{articulo.descripcion}}</td>
+                        <td>{{articulo.precio}}</td>
+                      </tr>
+                    </template>
+                  </table>    
+                  <form v-on:submit.prevent="agregarArticulo">
+                    <fieldset>
+                    <label for="codigo">Ingrese código:</label>
+                    <input type="number" v-model="codigo" name="codigo" class="form-control">
+
+                    <label for="descripcion">Ingrese descripción:</label>
+                    <input type="text" v-model="descripcion" name="descripcion" class="form-control">
+
+                    <label for="descripcion">Ingrese precio:</label>
+                    <input type="text" v-model="precio" name="precio" class="form-control">
+
+                    <input type="submit" value="Agregar" class="btn btn-primary my-2">
+                    </fieldset>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>

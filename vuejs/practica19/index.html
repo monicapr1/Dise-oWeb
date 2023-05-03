@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 19</title>
+</head>
+<body>
+    <div id="miApp"> 
+        <ul v-for="{ id, texto } in frases" :key="id">
+            <li>{{ id }} {{ texto }}</li>
+        </ul>
+        <hr>
+        <ul v-for="(frase,index) in frases" :key="frase.id">
+            <li>{{ index + 1 }}.- {{ frase.id }} {{ frase.texto }}</li>
+        </ul>
+        <hr>
+        <ul v-for="({ id, texto }, index) in frases" :key="id">
+            <li>{{ index + 1 }}.- {{ id }} {{ texto }}</li>
+        </ul>
+
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+</body>
